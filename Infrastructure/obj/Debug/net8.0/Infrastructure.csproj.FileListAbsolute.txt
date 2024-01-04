@@ -1,0 +1,11 @@
+C:\Users\renatha.lmesilva\source\repos\Application\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+C:\Users\renatha.lmesilva\source\repos\Application\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+C:\Users\renatha.lmesilva\source\repos\Application\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+C:\Users\renatha.lmesilva\source\repos\Application\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\renatha.lmesilva\source\repos\Application\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\renatha.lmesilva\source\repos\Application\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+C:\Users\renatha.lmesilva\source\repos\Application\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\renatha.lmesilva\source\repos\Application\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+C:\Users\renatha.lmesilva\source\repos\Application\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+C:\Users\renatha.lmesilva\source\repos\Application\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+C:\Users\renatha.lmesilva\source\repos\Application\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
