@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\renatha.lmesilva\\source\\repos\\Application\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\Application\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\renatha.lmesilva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\Application\\Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

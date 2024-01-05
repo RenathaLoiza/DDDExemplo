@@ -15,9 +15,9 @@ namespace Application.Controllers
         }
         [HttpPost]
         [Route("CadastrarVeiculo")]
-        public IActionResult PostAsync([FromBody] VeiculoCommand command)
+        public async Task <IActionResult> PostAsync([FromBody] VeiculoCommand command)
         {
-            _veiculoservice.postAsync(command);
+            await _veiculoservice.postAsync(command);
             
             return Ok();
         }

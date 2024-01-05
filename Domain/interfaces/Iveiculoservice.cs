@@ -9,7 +9,7 @@ namespace Domain.interfaces
 {
     public interface Iveiculoservice
     {
-        void postAsync (VeiculoCommand command);
+       Task postAsync (VeiculoCommand command);
         void postAsync();
         void GetAsync();
 

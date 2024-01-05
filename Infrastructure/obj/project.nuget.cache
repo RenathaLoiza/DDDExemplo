@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OubxY0qjJ3VeTtmGj7eYF0t5ekfX+Rzcg4yw3AQ5lIwyrE8bhg3S7zOlLDjbPirlZS5zT0Y4MGQcBIOmJHyaMg==",
+  "dgSpecHash": "jDkpXsN2WWOMboRcg/anFfUJeXxNCq8gZ5iHVTmaTdGOBwGhjEdhRqMbFt1GGhAQ8et+fp3sBrQPGxDkxrDpeA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\renatha.lmesilva\\source\\repos\\Application\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
