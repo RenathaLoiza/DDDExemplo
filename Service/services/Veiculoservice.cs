@@ -31,10 +31,10 @@ namespace Service.services
             }
             int anoAtual = DateTime.Now.Year;
 
-            if (anoAtual - command.AnoFabricacao > 5 )
+            if (anoAtual - command.AnoFabricacao > 5 || command.AnoFabricacao > anoAtual )
                 return "O ano do veiculo tem o ano de fabricação incorreto do permitido";
 
-            return "cadastro foi realizado com sucesso!";
+            return _veiculoRepository.PostAsync(command);
         }
         
         public void postAsync()
