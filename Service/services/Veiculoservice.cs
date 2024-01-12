@@ -1,11 +1,18 @@
 ﻿using Domain.Commands;
 using Domain.Enum;
 using Domain.interfaces;
+using Infrastructure.Repository;
 
 namespace Service.services
 {
     public class Veiculoservice : Iveiculoservice
     {
+        private readonly IveiculoRepository _repository;
+        public Veiculoservice(IveiculoRepository repository)
+        {
+            _repository = repository;
+        }
+
         public void GetAsync()
         {
             throw new NotImplementedException();
@@ -34,12 +41,18 @@ namespace Service.services
             if (anoAtual - command.AnoFabricacao > 5 || command.AnoFabricacao > anoAtual )
                 return "O ano do veiculo tem o ano de fabricação incorreto do permitido";
 
-            return _veiculoRepository.PostAsync(command);
+            
+            return await _repository.postAsync(command);
         }
         
         public void postAsync()
         {
             throw new NotImplementedException();
+        }
+        //buscar veiculos alugados e retornar false.
+        public async Task<IEnumerable<VeiculoCommand>> GetVeiculoCommands()
+        {
+           return await _repository.GetVeiculoCommands();
         }
     }
 }

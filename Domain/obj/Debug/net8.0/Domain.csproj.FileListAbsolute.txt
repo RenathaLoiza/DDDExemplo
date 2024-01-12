@@ -33,3 +33,15 @@ C:\Users\DELL\Source\Repos\DDDExemplo\Domain\obj\Debug\net8.0\Domain.dll
 C:\Users\DELL\Source\Repos\DDDExemplo\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\DELL\Source\Repos\DDDExemplo\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\DELL\Source\Repos\DDDExemplo\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\renatha.lmesilva\source\repos\outro\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\renatha.lmesilva\source\repos\outro\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\renatha.lmesilva\source\repos\outro\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Users\renatha.lmesilva\source\repos\outro\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\renatha.lmesilva\source\repos\outro\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\renatha.lmesilva\source\repos\outro\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Users\renatha.lmesilva\source\repos\outro\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\renatha.lmesilva\source\repos\outro\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+C:\Users\renatha.lmesilva\source\repos\outro\Domain\obj\Debug\net8.0\Domain.dll
+C:\Users\renatha.lmesilva\source\repos\outro\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Users\renatha.lmesilva\source\repos\outro\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Users\renatha.lmesilva\source\repos\outro\Domain\obj\Debug\net8.0\ref\Domain.dll

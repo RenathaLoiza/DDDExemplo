@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace Domain.interfaces
 {
-    internal interface IveiculoRepository
+    public interface IveiculoRepository
     {
-        Task<string> postAsync(Veiculo command);
+        Task<string> postAsync(VeiculoCommand command);
+        Task<IEnumerable<VeiculoCommand>> GetVeiculoCommands();
         void postAsync();
         void GetAsync();
     }
