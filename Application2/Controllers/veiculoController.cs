@@ -1,5 +1,6 @@
 ﻿using Domain.Commands;
 using Domain.interfaces;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Application.Controllers
@@ -37,7 +38,22 @@ namespace Application.Controllers
 
         public async Task<IActionResult> GetVeiculosAlugadosAsync()
         {
-            return Ok(await _veiculoservice.GetVeiculoCommands());            
-        }    
+            return Ok(await _veiculoservice.GetVeiculoCommands());
+        }
+        [HttpGet]
+        [Route("veiculosIndisponiveis")]
+
+        public async Task<IActionResult> GetVeiculosIndisponiveisAsync()
+        {
+            return Ok(await _veiculoservice.GetVeiculosIndispiniveis());
+        }
+
+        [HttpPost]
+        [Route("tabelaClientes")]
+
+        public async Task<IActionResult> PostTabelaClientesAsync([FromBody] VeiculoCommand)
+        {
+            return Ok(await _veiculoservice.postAsync(command));
+        }
     }
 }

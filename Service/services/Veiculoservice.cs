@@ -49,10 +49,16 @@ namespace Service.services
         {
             throw new NotImplementedException();
         }
+        //lista getVeiculosCommand
         //buscar veiculos alugados e retornar false.
         public async Task<IEnumerable<VeiculoCommand>> GetVeiculoCommands()
         {
            return await _repository.GetVeiculoCommands();
         }
+        public async Task<IEnumerable<VeiculoCommand>> GetVeiculosIndispiniveis()
+        {
+            return await _repository.GetVeiculosIndispiniveis();
+        }
+        public
     }
 }

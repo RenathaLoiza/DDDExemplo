@@ -11,6 +11,10 @@ namespace Domain.interfaces
     {
         Task<string> postAsync(VeiculoCommand command);
         Task<IEnumerable<VeiculoCommand>> GetVeiculoCommands();
+
+        Task<IEnumerable<VeiculoCommand>> GetVeiculosIndispiniveis();
+        Task<string> postAsync(VeiculoCommand command);
+
         void postAsync();
         void GetAsync();
 

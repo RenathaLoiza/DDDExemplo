@@ -10,7 +10,7 @@ namespace Infrastructure.Repository
     public class VeiculoRepository : IveiculoRepository
     {
         //colocar o nume do database
-        private string conexao = @"Server=(localdb)\\mssqllocaldb;Database=AluguelVeiculos;Trusted_Connection=True;MultipleActiveResultSets=True";
+        private string conexao = @"Server=(localdb)\mssqllocaldb;Database=AluguelVeiculos;Trusted_Connection=True;MultipleActiveResultSets=True";
         public async Task<string> postAsync(VeiculoCommand command)
         {
             string queryInsert = @"insert into veiculo(Placa,AnoFabricacao,TipoVeiculoID,Estado,montadoraID)
@@ -44,27 +44,29 @@ namespace Infrastructure.Repository
         {
             throw new NotImplementedException();
         }
-        public string GetVeiculosAlugados(VeiculoCommand command)
+        public async Task<IEnumerable<VeiculoCommand>> GetVeiculoCommands()
         {
-            string queryInsert = @"SELECT * FROM Veiculo WHERE Alugado = 1";
+            //query significa consulta
+            string queryBuscarVeiculo = @"SELECT * FROM Veiculo WHERE Alugado = 0";
             using (SqlConnection conn = new SqlConnection(conexao))
             {
-                conn.Execute(queryInsert, new
-                {
-                    Placa = command.Placa,
-                    AnoFabricacao = command.AnoFabricacao,
-                    TipoVeiculoID = (int)command.TipoVeiculos,
-                    Estado = command.Estado,
-                    montadoraID = (int)command.montadora,
-                    Alugado = command.Alugado,
 
-                });
-
-                return conn.QueryAsync<VeiculoCommand>(queryInsert);
+                return conn.QueryAsync<VeiculoCommand>(queryBuscarVeiculo).Result.ToList();
 
             }
 
 
         }
+        public async Task<IEnumerable<VeiculoCommand>> GetVeiculosIndispiniveis()
+        {
+            string queryBucarIdisponiveis = @"SELECT * FROM veiculo WHERE alugado = 1";
+            using (SqlConnection conn = new SqlConnection(conexao))
+            {
+                {
+                    return conn.QueryAsync<VeiculoCommand>(queryBucarIdisponiveis).Result.ToList();
+                }
+            }
+        }
     }
 }
+
