@@ -48,12 +48,6 @@ namespace Application.Controllers
             return Ok(await _veiculoservice.GetVeiculosIndispiniveis());
         }
 
-        [HttpPost]
-        [Route("tabelaClientes")]
-
-        public async Task<IActionResult> PostTabelaClientesAsync([FromBody] VeiculoCommand)
-        {
-            return Ok(await _veiculoservice.postAsync(command));
-        }
+        
     }
 }
