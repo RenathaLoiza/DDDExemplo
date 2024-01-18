@@ -1,72 +1,66 @@
 ﻿using Dapper;
 using Domain.Commands;
-using Domain.Entidades;
+using Domain.Enum;
 using Domain.interfaces;
 using System.Data.SqlClient;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Infrastructure.Repository
 {
     public class VeiculoRepository : IveiculoRepository
     {
-        //colocar o nume do database
-        private string conexao = @"Server=(localdb)\mssqllocaldb;Database=AluguelVeiculos;Trusted_Connection=True;MultipleActiveResultSets=True";
-        public async Task<string> postAsync(VeiculoCommand command)
+        string conexao = @"Server=(localdb)\mssqllocaldb;Database=AluguelVeiculos;Trusted_Connection=True;MultipleActiveResultSets=true";
+        public async Task<string> PostAsync(VeiculoCommand command)
         {
-            string queryInsert = @"insert into veiculo(Placa,AnoFabricacao,TipoVeiculoID,Estado,montadoraID)
-                                   values(@Placa, @AnoFabricacao, @TipoVeiculoID, @Estado, @montadoraID)";
+            string queryInsert = @"
+            INSERT INTO Veiculo(Placa, AnoFabricacao, TipoVeiculoId, Estado, MontadoraId)
+            VALUES(@Placa,@AnoFabricacao , @TipoVeiculoId, @Estado, @MontadoraId)";
             using (SqlConnection conn = new SqlConnection(conexao))
             {
                 conn.Execute(queryInsert, new
                 {
                     Placa = command.Placa,
                     AnoFabricacao = command.AnoFabricacao,
-                    TipoVeiculoID = (int)command.TipoVeiculos,
+                    TipoVeiculoId = (int)command.Tiposdeveiculos,
                     Estado = command.Estado,
-                    montadoraID = (int)command.montadora,
-
-
+                    MontadoraId = (int)command.montadora
                 });
-                return "veiculos cadastrados com sucesso!";
+
+                return "Veiculo Cadastrado com sucesso";
             }
-
-
-
         }
-        public void postAsync()
+
+        public void PostAsync()
         {
+
         }
         public void GetAsync()
         {
+
         }
 
-        public Task<string> postAsync(Veiculo command)
+        public async Task<IEnumerable<VeiculoCommand>> GetVeiculosDisponiveis()
         {
-            throw new NotImplementedException();
-        }
-        public async Task<IEnumerable<VeiculoCommand>> GetVeiculoCommands()
-        {
-            //query significa consulta
-            string queryBuscarVeiculo = @"SELECT * FROM Veiculo WHERE Alugado = 0";
+            string queryBuscarVeiculosDisponiveis = @"
+               SELECT * FROM Veiculo WHERE ALUGADO = 0";
             using (SqlConnection conn = new SqlConnection(conexao))
             {
-
-                return conn.QueryAsync<VeiculoCommand>(queryBuscarVeiculo).Result.ToList();
-
+                return conn.QueryAsync<VeiculoCommand>(
+                    queryBuscarVeiculosDisponiveis).Result.ToList();
             }
-
-
         }
-        public async Task<IEnumerable<VeiculoCommand>> GetVeiculosIndispiniveis()
+        public async Task<VeiculoPrecoCommand> GetPrecoDiaria(Etiposdeveiculos tipoVeiculo)
         {
-            string queryBucarIdisponiveis = @"SELECT * FROM veiculo WHERE alugado = 1";
+            string queryGetPrecoDiaria = @"SELECT * FROM VeiculoPreco
+                                           WHERE TIPOVEICULO = @TIPOVEICULO";
+
             using (SqlConnection conn = new SqlConnection(conexao))
             {
+                return conn.QueryAsync<VeiculoPrecoCommand>(queryGetPrecoDiaria, new
                 {
-                    return conn.QueryAsync<VeiculoCommand>(queryBucarIdisponiveis).Result.ToList();
-                }
+                    TipoVeiculo = tipoVeiculo
+                }).Result.FirstOrDefault();
+
             }
         }
     }
 }
-

@@ -13,6 +13,7 @@ namespace Domain.commands
         public DateTime dataNascimento { get; set; }
         public int habilitacao { get; set; }
         public string Estado { get; set; }
+        
 
     }
 }

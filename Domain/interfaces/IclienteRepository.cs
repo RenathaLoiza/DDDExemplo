@@ -11,7 +11,7 @@ namespace Domain.interfaces
 {
     public interface IclienteRepository
     {
-        Task<string> postAsync(ClienteCommand command);
+        Task<string> PostAsync(ClienteCommand command);
         
     }
 }

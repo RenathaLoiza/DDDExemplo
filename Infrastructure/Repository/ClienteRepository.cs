@@ -1,56 +1,36 @@
 ﻿using Dapper;
-using Domain.Commands;
-using Domain.Entidades;
+using Domain.commands;
 using Domain.interfaces;
-using Infrastructure.Repository;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-public class ClienteRepository : IclienteRepository
+namespace Infrastructure.Repository
 {
-    //colocar o nume do database
-    private string conexao = @"Server=(localdb)\mssqllocaldb;Database=AluguelVeiculos;Trusted_Connection=True;MultipleActiveResultSets=True"; 
-    public async Task<string> postAsync(ClienteCommand command)
+    public class ClienteRepository : IclienteRepository
     {
-        string queryInsert = @"insert into veiculo(PessoaId,Nome,DataNascimento ,Habilitação,Estado)
-                               values(@PessoaId,@Nome,@DataNascimento ,@Habilitação,@Estado)";
-        using (SqlConnection conn = new SqlConnection(conexao))
+        string conexao = @"Server=(localdb)\mssqllocaldb;Database=AluguelVeiculos;Trusted_Connection=True;MultipleActiveResultSets=true";
+
+        public async Task<string> PostAsync(ClienteCommand command)
         {
-            conn.Execute(queryInsert, new
+            string queryInsertCliente = @"
+            INSERT INTO CLIENTE(Nome, Datanascimento, Habilitacao, ESTADO)
+            VALUES(@NOME, @DATANASCIMENTO, @Hablitacao, @ESTADO)
+            ";
+
+            using (SqlConnection con = new SqlConnection(conexao))
             {
-                Nome = command.Nome,
-                DataNascimento = command.dataNascimento,
-                Habilitação = command.habilitação,
-                Estado = command.Estado,
+                con.Execute(queryInsertCliente, new 
+                {
+                    Nome = command.Nome,
+                    dataNascimento = command.dataNascimento,
+                    habilitacao = command.habilitacao,
+                    Estado = command.Estado
+                });
 
-
-            });
-            return "veiculos cadastrados com sucesso!";
+                return "Cadastro realizado com sucesso";
+            }
         }
 
-
-
+      
     }
-   
-
-    public async Task<IEnumerable<ClienteCommand>> GetClienteCommands()
-    {
-        //query significa consulta
-        string queryBuscarVeiculo = @"SELECT * FROM CLIENTE WHERE ESTADO";
-        using (SqlConnection conn = new SqlConnection(conexao))
-        {
-
-            return conn.QueryAsync<ClienteCommand>(queryBuscarVeiculo).Result.ToList();
-
-        }
-
-
-    }
-
-
 }
+

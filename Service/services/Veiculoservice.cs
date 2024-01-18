@@ -1,64 +1,70 @@
 ﻿using Domain.Commands;
 using Domain.Enum;
 using Domain.interfaces;
-using Infrastructure.Repository;
+using Domain.ViewModel;
 
-namespace Service.services
+namespace Service.Services
 {
-    public class Veiculoservice : Iveiculoservice
+    public class VeiculoService : Iveiculoservice
     {
+        //Injeção de dependencia
+
         private readonly IveiculoRepository _repository;
-        public Veiculoservice(IveiculoRepository repository)
+
+        public VeiculoService(IveiculoRepository repository)
         {
             _repository = repository;
         }
-
         public void GetAsync()
         {
             throw new NotImplementedException();
         }
-        /*incluir validação,só podem cadastrar veiculos com 
-        ate 5 anos de uso
-        incluir somente carros do tipo SUV,HATCH, Sedan*/
-        public async Task <string> postAsync(VeiculoCommand command)
-        {
 
+        public async Task<string> PostAsync(VeiculoCommand command)
+        {
             if (command == null)
-                return "todos os campos são obrigatorios";
+                return "Todos os Campos são Obrigatórios";
+
+            int anoAtual = DateTime.Now.Year;
+            if (anoAtual - command.AnoFabricacao > 5)
+                return "O Ano do veículo é menor que o permitido";
 
             if (command.Tiposdeveiculos != Etiposdeveiculos.SUV
-                    && command.Tiposdeveiculos != Etiposdeveiculos.hatch
-                    && command.Tiposdeveiculos != Etiposdeveiculos.Sedan
-                    )
-                return "o veiculo não e permitido";
-            { 
-             /*foi realizado o calculo do ano atual menos o ano de fabrição do modelo
-              * a subtração dos mesmos for maior que 5 ele tera mais de 5 anos de uso.*/
-             
-            }
-            int anoAtual = DateTime.Now.Year;
+               && command.Tiposdeveiculos != Etiposdeveiculos.Hatch
+               && command.Tiposdeveiculos != Etiposdeveiculos.Sedan
+            )
+                return "O Tipo de Veículo não pe permitido";
 
-            if (anoAtual - command.AnoFabricacao > 5 || command.AnoFabricacao > anoAtual )
-                return "O ano do veiculo tem o ano de fabricação incorreto do permitido";
-
-            
-            return await _repository.postAsync(command);
+            return await _repository.PostAsync(command);
         }
-        
-        public void postAsync()
+
+        public void PostAsync()
         {
             throw new NotImplementedException();
         }
-        //lista getVeiculosCommand
-        //buscar veiculos alugados e retornar false.
-        public async Task<IEnumerable<VeiculoCommand>> GetVeiculoCommands()
+        public async Task<IEnumerable<VeiculoCommand>> GetVeiculosDisponiveis()
         {
-           return await _repository.GetVeiculoCommands();
+            return await _repository.GetVeiculosDisponiveis();
         }
-        public async Task<IEnumerable<VeiculoCommand>> GetVeiculosIndispiniveis()
+
+        public async Task<SimularVeiculoAluguelViewModel> SimularVeiculoAluguel(int totalDiasSimulado, Etiposdeveiculos tipoVeiculo)
         {
-            return await _repository.GetVeiculosIndispiniveis();
+            var veiculoPreco = await _repository.GetPrecoDiaria(tipoVeiculo);
+            double taxaEstadual = 10.50;
+            double taxaFederal = 3.5;
+            double taxaMunicipal = 13.5;
+
+            var simulacao = new SimularVeiculoAluguelViewModel();
+            simulacao.TotalDiasSimulado = totalDiasSimulado;
+            simulacao.Taxas = (decimal)(taxaMunicipal + taxaEstadual + taxaFederal);
+            simulacao.TipoVeiculo = tipoVeiculo;
+            simulacao.ValorDaria = veiculoPreco.Preco;
+            simulacao.ValorTotal = (totalDiasSimulado * veiculoPreco.Preco) + simulacao.Taxas;
+
+            return simulacao;
         }
-        public
+
+      
     }
 }
+ 
