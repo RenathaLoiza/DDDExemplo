@@ -20,5 +20,7 @@ namespace Domain.interfaces
         void GetAsync();
         Task<IEnumerable<VeiculoCommand>> GetVeiculosDisponiveis();
         Task<SimularVeiculoAluguelViewModel> SimularVeiculoAluguel(int TotalDiasSimulado,Etiposdeveiculos tipoVeiculo);
+        Task AlugarVeiculo(AlugarVeiculoViewModelInput input);
+        Task<bool> VeiculoEstaAlugado(string placaVeiculo);
     }
 }

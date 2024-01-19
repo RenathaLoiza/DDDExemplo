@@ -11,5 +11,6 @@ namespace Domain.interfaces
         void GetAsync();
         Task<IEnumerable<VeiculoCommand>> GetVeiculosDisponiveis();
         Task<VeiculoPrecoCommand> GetPrecoDiaria(Etiposdeveiculos tipoVeiculo);
+        Task<bool> VeiculoEstaAlugado(string placaVeiculo);
     }
 }

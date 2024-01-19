@@ -1,6 +1,7 @@
 ﻿using Domain.commands;
 using Domain.interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Service.Services;
 
 namespace Application2.Controllers
 {
@@ -22,13 +23,7 @@ namespace Application2.Controllers
         {
             return Ok(await _clienteservice.PostAsync(command));
         }
-        [HttpGet]
-        [Route("BuscandoEstado")]
-
-        public async Task<IActionResult>GetAsync(ClienteCommand command)
-        { 
-            
-        }
+       
 
 
 

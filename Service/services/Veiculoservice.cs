@@ -64,7 +64,35 @@ namespace Service.Services
             return simulacao;
         }
 
-      
+        public Task AlugarVeiculo(AlugarVeiculoViewModelInput input)
+        {
+            //todo.. chama medoto para validar disponibilidade de veiculo.
+            var veiculoAlugado = await VeiculoEstaAlugado(input.PlacaVeiculo);
+            if (veiculoAlugado)
+
+                int dataAtual = DateTime.Now.Year;
+            //todo.. chamar medoto para validar datas.
+           
+            if (input.DataRetirada < input.DataDevolucao ) 
+            {
+                return "Data de retirada menor que a data de devolução";
+            }
+            if (input.DataRetirada < dataAtual || input.DataDevolucao < dataAtual) 
+            {
+                return "Data de retira e devoluçao e menor que a data atual";
+            }
+            // if (input.DataDevolucao < dataAtual)
+            //todo.. chamar medoto para validar cartao.
+
+           //todo.. chamar medoto para validar habilitacao.
+            
+        }
+        private Task<bool> VeiculoEstaAlugado(string placaVeiculo)
+        {
+            return _repository.VeiculoEstaAlugado(placaVeiculo);
+        }
+
+        
     }
 }
  
