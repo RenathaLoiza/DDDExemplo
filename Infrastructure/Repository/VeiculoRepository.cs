@@ -62,5 +62,18 @@ namespace Infrastructure.Repository
 
             }
         }
+        public async Task<bool> VeiculoEstaAlugado(string placaVeiculo)
+        {
+            string queryDisponibilidadeVeiculo = @"
+                   SELECT Alugado FROM Veiculo WHERE Placa = @Placa";
+
+            using (SqlConnection conn = new SqlConnection(conexao))
+            {
+                return conn.Query<bool>(queryDisponibilidadeVeiculo, new
+                {
+                    Placa = placaVeiculo
+                }).FirstOrDefault();
+            }
+        }
     }
 }

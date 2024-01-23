@@ -1,6 +1,6 @@
 using Domain.interfaces;
 using Infrastructure.Repository;
-using Service.services;
+using Service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IveiculoRepository, VeiculoRepository>();
-builder.Services.AddScoped<Iveiculoservice, Veiculoservice>();
+builder.Services.AddScoped<Iveiculoservice, VeiculoService>();
 
 var app = builder.Build();
 

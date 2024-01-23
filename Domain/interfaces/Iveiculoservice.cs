@@ -1,11 +1,6 @@
 ﻿using Domain.Commands;
 using Domain.Enum;
 using Domain.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.interfaces
 {
@@ -21,6 +16,5 @@ namespace Domain.interfaces
         Task<IEnumerable<VeiculoCommand>> GetVeiculosDisponiveis();
         Task<SimularVeiculoAluguelViewModel> SimularVeiculoAluguel(int TotalDiasSimulado,Etiposdeveiculos tipoVeiculo);
         Task AlugarVeiculo(AlugarVeiculoViewModelInput input);
-        Task<bool> VeiculoEstaAlugado(string placaVeiculo);
     }
 }

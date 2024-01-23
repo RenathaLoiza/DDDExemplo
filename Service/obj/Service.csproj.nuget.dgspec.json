@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Service\\Service.csproj": {}
+    "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Service\\Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Domain\\Domain.csproj": {
+    "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\renatha.lmesilva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\renatha.lmesilva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -91,8 +91,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Domain\\Domain.csproj"
+              "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Domain\\Domain.csproj"
               }
             }
           }
@@ -136,14 +136,14 @@
         }
       }
     },
-    "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Service\\Service.csproj": {
+    "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Service\\Service.csproj",
+        "projectPath": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\renatha.lmesilva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Service\\obj\\",
+        "outputPath": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -164,11 +164,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Domain\\Domain.csproj"
+              "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -182,6 +182,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "CreditCardValidator": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

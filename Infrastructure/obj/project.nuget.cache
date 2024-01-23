@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2cy3cySN8QmG3XXcZIVL58rWsJ2xPfVFFhHqvyd8ljSzW5DYEdzjHTFMnsRF8nv2+B6aj39u+j2cw0WskJz3Nw==",
+  "dgSpecHash": "cm41IuV7gUYG+uJSh6n4OLnJnMQ0b0qmnhBowhyCv8DqYHNZq8dFfrMqm0vriyKY14ABDNlMz9EE5XPHSd5e0g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\renatha.lmesilva\\source\\repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\renatha.lmesilva\\Source\\Repos\\DDDExemplo\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\renatha.lmesilva\\.nuget\\packages\\dapper\\2.1.28\\dapper.2.1.28.nupkg.sha512",
     "C:\\Users\\renatha.lmesilva\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

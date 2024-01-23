@@ -1,4 +1,5 @@
-﻿using Domain.Commands;
+﻿using CreditCardValidator;
+using Domain.Commands;
 using Domain.Enum;
 using Domain.interfaces;
 using Domain.ViewModel;
@@ -64,25 +65,31 @@ namespace Service.Services
             return simulacao;
         }
 
-        public Task AlugarVeiculo(AlugarVeiculoViewModelInput input)
+        public async Task AlugarVeiculo(AlugarVeiculoViewModelInput input)
         {
             //todo.. chama medoto para validar disponibilidade de veiculo.
             var veiculoAlugado = await VeiculoEstaAlugado(input.PlacaVeiculo);
             if (veiculoAlugado)
 
-                int dataAtual = DateTime.Now.Year;
+                
             //todo.. chamar medoto para validar datas.
            
             if (input.DataRetirada < input.DataDevolucao ) 
             {
-                return "Data de retirada menor que a data de devolução";
+               
             }
-            if (input.DataRetirada < dataAtual || input.DataDevolucao < dataAtual) 
+              var dataHoje = DateTime.Now;
+            if (input.DataRetirada < dataHoje || input.DataDevolucao < dataHoje) 
             {
-                return "Data de retira e devoluçao e menor que a data atual";
+                
             }
             // if (input.DataDevolucao < dataAtual)
             //todo.. chamar medoto para validar cartao.
+            CreditCardDetector detector = new CreditCardDetector(Convert.ToString(input.Cartao.numero));
+            var bandeira = detector.Brand;
+            if (detector.IsValid()) 
+            { 
+            }
 
            //todo.. chamar medoto para validar habilitacao.
             
@@ -92,7 +99,6 @@ namespace Service.Services
             return _repository.VeiculoEstaAlugado(placaVeiculo);
         }
 
-        
     }
 }
  

@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Application2",
-    "\\Domain",
-    "\\Service",
-    "\\Service\\services"
+    ""
   ],
-  "SelectedNode": "\\Domain\\interfaces",
+  "SelectedNode": "\\Application.sln",
   "PreviewInSolutionExplorer": false
 }

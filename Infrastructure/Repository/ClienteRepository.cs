@@ -9,6 +9,11 @@ namespace Infrastructure.Repository
     {
         string conexao = @"Server=(localdb)\mssqllocaldb;Database=AluguelVeiculos;Trusted_Connection=True;MultipleActiveResultSets=true";
 
+        public Task GetAsync(ClienteCommand command)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<string> PostAsync(ClienteCommand command)
         {
             string queryInsertCliente = @"

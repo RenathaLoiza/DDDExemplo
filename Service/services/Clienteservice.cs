@@ -10,6 +10,12 @@ namespace Service.Services
         {
             _repository = clienteRepository;
         }
+
+        public Task GetAsync(ClienteCommand command)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<string> PostAsync(ClienteCommand command)
         {
             int idade = DateTime.Now.Year - command.dataNascimento.Year;
