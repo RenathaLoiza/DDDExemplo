@@ -1,1 +1,2 @@
 C:\Users\renatha.lmesilva\source\repos\DDDExemplo\Application2\site\site\obj\Debug\site.esproj.CoreCompileInputs.cache
+C:\Users\renatha.lmesilva\source\repos\react\DDDExemplo\Application2\site\site\obj\Debug\site.esproj.CoreCompileInputs.cache
